@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two-Player Chess - Fabulous UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">♜</span>
+        <span class="title">Two-Player Chess</span>
+      </div>
+      <div class="controls">
+        <button id="newGame" class="btn">New Game</button>
+        <button id="undo" class="btn" disabled>Undo</button>
+        <button id="flip" class="btn" title="Flip board">Flip Board</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section id="board" class="board" aria-label="Chess board" tabindex="0"></section>
+      <aside class="sidebar">
+        <div class="status" id="status">White to move</div>
+        <div class="captured">
+          <h3>Captured</h3>
+          <div class="captured-white" id="capturedWhite" title="White pieces captured"></div>
+          <div class="captured-black" id="capturedBlack" title="Black pieces captured"></div>
+        </div>
+        <div class="move-list">
+          <h3>Move History</h3>
+          <ol id="moves"></ol>
+        </div>
+      </aside>
+    </main>
+
+    <div id="promoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Promotion options">
+      <div class="modal-content">
+        <p>Promote pawn to:</p>
+        <div class="promo-options" id="promoOptions">
+          <button data-piece="Q" class="promo-btn">Queen</button>
+          <button data-piece="R" class="promo-btn">Rook</button>
+          <button data-piece="B" class="promo-btn">Bishop</button>
+          <button data-piece="N" class="promo-btn">Knight</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
